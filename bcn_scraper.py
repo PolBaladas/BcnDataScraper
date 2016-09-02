@@ -15,9 +15,8 @@ def getSoup(url):
     return soup
 
 def getRows(soup):
-	rows = soup.find_all('td', class_="WhadsDades")
+	rows = soup.find_all('td', class_="WhadsRowVar1")
 	return cleanRows(rows)
-
 def cleanRows(rows):
 	l = []
 	for r in rows:
@@ -25,13 +24,24 @@ def cleanRows(rows):
 	return l
 
 def getColumns(soup):
-	columns = soup.find_all('td', class_="WhadsColVar1")
-	return cleanColumns(columns)
+	data = soup.find_all('td', class_="WhadsColVar1")
+	return cleanData(data)
 
 def cleanColumns(columns):
 	l = []
 	for c in columns:
 		l.append(c.text[:-2])
+	return l
+
+def getData(soup):
+	data = soup.find_all('td', class_="WhadsDades")
+	return cleanData(data)
+	
+def cleanData(data):
+	l = []
+	for d in data:
+		if d.text!=None:
+			l.append(str(d.text[:-2]))
 	return l
 
 def getTitle(soup):
@@ -49,9 +59,10 @@ def buildDict(url):
 	d = {}
 	d['tit'] = getTitle(soup)
 	d['subtit'] = getSubTitle(soup)
-	d['columns'] = getColumns(soup)
+	d['cols'] = getColumns(soup)
 	d['rows'] = getRows(soup)
 	d['data'] = getData(soup)
+	return d
 
 url=sys.argv[1]
 d = buildDict(url)
