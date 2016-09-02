@@ -45,10 +45,11 @@ def cleanData(data):
 	return l
 
 def getTitle(soup):
-	return soup.find_all('td', class_="WhadsTitVar1")[0].text[3:]
+	return soup.find_all('td', class_="WhadsTitVar1")[0].text
 
 def getSubTitle(soup):
-	pass
+	return soup.find_all('td', class_="WhadsTitVar2")[0].text
+
 
 def cleanSoup(soup):
 	return soup.find('table')
