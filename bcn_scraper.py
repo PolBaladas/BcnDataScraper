@@ -36,7 +36,7 @@ def cleanColumns(columns):
 def getData(soup):
 	data = soup.find_all('td', class_="WhadsDades")
 	return cleanData(data)
-	
+
 def cleanData(data):
 	l = []
 	for d in data:
@@ -45,7 +45,7 @@ def cleanData(data):
 	return l
 
 def getTitle(soup):
-	pass
+	return soup.find_all('td', class_="WhadsTitVar1")[0].text[3:]
 
 def getSubTitle(soup):
 	pass
