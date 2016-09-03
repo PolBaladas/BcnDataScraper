@@ -22,7 +22,7 @@ def getSubTitle(soup):
 	return soup.find_all('td', class_="WhadsTitVar2")[0].text
 
 def getRowsNames(soup):
-	rows = soup.find_all('td', class_="WhadsRowVar1")
+	rows = soup.select('td[class*="WhadsRowVar"]')
 	return cleanTags(rows)
 
 def getColumnsNames(soup):
