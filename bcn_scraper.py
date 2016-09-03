@@ -26,13 +26,13 @@ def getRowsNames(soup):
 	return cleanTags(rows)
 
 def getColumnsNames(soup):
-	cols = soup.find_all('td', class_="WhadsColVar1")
+	cols = soup.select('td[class*="WhadsColVar"]')
 	return cleanTags(cols)
 
 def cleanTags(tags):
 	l = []
 	for t in tags:
-		l.append(t.text[:-2])
+		l.append(t.text)
 	return l
 
 def getData(soup):
