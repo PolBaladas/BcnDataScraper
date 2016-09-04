@@ -16,10 +16,12 @@ def makeSoup(url):
     return soup
 
 def getTitle(soup):
-	return soup.find_all('td', class_="WhadsTitVar1")[0].text
+	return soup.find_all('td', class_="WhadsTitVar1"
+		)[0].text.encode('ascii','ignore')
 
 def getSubTitle(soup):
-	return soup.find_all('td', class_="WhadsTitVar2")[0].text
+	return soup.find_all('td', class_="WhadsTitVar2"
+		)[0].text.encode('ascii','ignore')
 
 def getRowsNames(soup):
 	rows = soup.select('td[class*="WhadsRowVar"]')
@@ -32,7 +34,7 @@ def getColumnsNames(soup):
 def cleanTags(tags):
 	l = []
 	for t in tags:
-		l.append(t.text)
+		l.append(t.text.encode('ascii','ignore'))
 	return l
 
 def getData(soup):
@@ -66,9 +68,22 @@ def buildDict(url):
 	d['url'] = url
 	d['tit'] = getTitle(soup)
 	d['subtit'] = getSubTitle(soup)
-	d['cols'] = getColumnsNames(soup)
+
+	cols = getColumnsNames(soup)
+	d['cols'] = cols[1:]
+	d['cols_title'] = cols[0]
 	d['rows'] = getRowsNames(soup)
-	d['data'] = getData(soup)
+	
+	data = getData(soup)
+	d['data'] = {}
+	i = 0
+	for col in d['cols']:
+		j = 0
+		d['data'][col] = {}
+		for row in d['rows']:
+			d['data'][col][row] = data[i][j]
+			j+=1
+		i+=1
 	return d
 
 url=sys.argv[1]
