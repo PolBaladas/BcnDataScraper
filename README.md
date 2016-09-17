@@ -27,6 +27,8 @@ Good Examples:
 
 ##BCN Scraper - JSON Out
 	Scrapes a "BCN Estadistica" URL and outputs data as JSON in the following structure: 
+
+
 		```
 		url:'' --> url 
 		title:'' --> table title
@@ -34,5 +36,6 @@ Good Examples:
 		cols:[] --> List of Table Columns
 		rows:[] --> List of Table Rows
 		```
+		
 
 	Example: [out_example.js]() --> <http://www.jsoneditoronline.org/?id=c65c30927f280a2c01a24d30c4673dc8>
