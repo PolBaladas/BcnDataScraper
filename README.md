@@ -13,7 +13,7 @@ Install the Python packages required:
 Packages: Requests, BeautifulSoup
 
 ## Running the Script
-``` python bcn_scraper.py [url] ```
+```$ python bcn_scraper.py [url] ```
 
 Where [url] represents an adress from BCN Estadística site.
 
