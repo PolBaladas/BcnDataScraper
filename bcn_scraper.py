@@ -51,6 +51,7 @@ def getData(soup):
 def cleanSoup(soup):
     return soup.find('table')
 
+
 def cleanTags(tags):
     l = []
     for t in tags:
@@ -81,12 +82,13 @@ def buildDict(url):
     cols = getColumnsNames(soup)
     d['cols'] = cols[1:]
     d['rows_title'] = cols[0]
+
     rows = getRowsNames(soup)
     d['rows'] = rows
 
     data = getData(soup)
     d['data'] = {}
-    
+
     for c in cols[1:]:
         d['data'][c] = {}
         for r in rows:
