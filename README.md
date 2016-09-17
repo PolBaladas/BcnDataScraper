@@ -19,13 +19,9 @@ Where [url] represents an adress from BCN Estadística site.
 
 Good Examples:
 
-Public Transport Data: 
+Public Transport Data: <http://www.bcn.cat/estadistica/catala/dades/economia/transport/tpublic/auev01.htm>
 
-<http://www.bcn.cat/estadistica/catala/dades/economia/transport/tpublic/auev01.htm>
-
-2015 Electoral Data: 
-
-<http://www.bcn.cat/estadistica/catala/dades/telec/aut/aut15/caut1001.htm>
+2015 Electoral Data: <http://www.bcn.cat/estadistica/catala/dades/telec/aut/aut15/caut1001.htm>
 
 
 
@@ -33,5 +29,4 @@ Public Transport Data:
 Scrapes a "BCN Estadistica" URL and outputs data as JSON in the following structure: 
 
 ![Screenshot](https://cloud.githubusercontent.com/assets/3987198/18607894/5d23f4dc-7cda-11e6-92db-0d6b4ba6e681.png)
-
 Example: [out_example.js]() --> <http://www.jsoneditoronline.org/?id=c65c30927f280a2c01a24d30c4673dc8>
