@@ -1,5 +1,5 @@
 # BcnDataScraper
-Web Scraper to scrape data from http://www.bcn.cat/estadistica/catala/index.htm 
+Web Scraper to scrape data from Barcelona city statistics site: http://www.bcn.cat/estadistica/catala/index.htm 
 
 Takes a URL adress from "BCN Estadística" as command line input and returns JSON-formatted, properly-organized and ready to process data as output.
 
@@ -15,9 +15,9 @@ Packages: Requests, BeautifulSoup
 ## Running the Script
 ```$ python bcn_scraper.py [url] ```
 
-Where [url] represents an adress from BCN Estadística site.
+Where [url] would be an adress from BCN Estadística site.
 
-Good Examples:
+Good/Interesting Examples:
 
 Public Transport Data: <http://www.bcn.cat/estadistica/catala/dades/economia/transport/tpublic/auev01.htm>
 
